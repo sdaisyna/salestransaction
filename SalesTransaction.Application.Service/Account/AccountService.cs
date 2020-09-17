@@ -47,7 +47,7 @@ namespace SalesTransaction.Application.Service.Account
 
                 cmd.CommandTimeout = _commandTimeout;
 
-                using(SqlDataReader sqldr = cmd.ExecuteReader())
+                using (SqlDataReader sqldr = cmd.ExecuteReader())
                 {
                     try
                     {
@@ -73,7 +73,7 @@ namespace SalesTransaction.Application.Service.Account
 
         public dynamic GetUserDetails(string json)
         {
-           using (var con=_dah.GetConnection())
+           using (var con = _dah.GetConnection())
             {
                 var cmd = con.CreateCommand();
 

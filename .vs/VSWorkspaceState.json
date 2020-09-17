@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SalesTransaction"
+    "\\SalesTransaction.Application.Service",
+    "\\SalesTransaction.Application.WebApi\\Areas",
+    "\\SalesTransaction.Application.WebApi\\Controllers"
   ],
-  "SelectedNode": "\\SalesTransaction.sln",
+  "SelectedNode": "\\SalesTransaction.Application.WebApi",
   "PreviewInSolutionExplorer": false
 }

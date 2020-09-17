@@ -4,14 +4,14 @@
     "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj": {
+    "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.DataAccess\\SalesTransaction.Application.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj",
-        "projectName": "SalesTransaction.Application.WebAPI",
-        "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj",
+        "projectUniqueName": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.DataAccess\\SalesTransaction.Application.DataAccess.csproj",
+        "projectName": "SalesTransaction.Application.DataAccess",
+        "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.DataAccess\\SalesTransaction.Application.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Daisyna\\.nuget\\packages\\",
-        "outputPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\obj\\",
+        "outputPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,206 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Model\\SalesTransaction.Application.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Model\\SalesTransaction.Application.Model.csproj",
+        "projectName": "SalesTransaction.Application.Model",
+        "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Model\\SalesTransaction.Application.Model.csproj",
+        "packagesPath": "C:\\Users\\Daisyna\\.nuget\\packages\\",
+        "outputPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Daisyna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Service\\SalesTransaction.Application.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Service\\SalesTransaction.Application.Service.csproj",
+        "projectName": "SalesTransaction.Application.Service",
+        "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Service\\SalesTransaction.Application.Service.csproj",
+        "packagesPath": "C:\\Users\\Daisyna\\.nuget\\packages\\",
+        "outputPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Daisyna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.DataAccess\\SalesTransaction.Application.DataAccess.csproj": {
+                "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.DataAccess\\SalesTransaction.Application.DataAccess.csproj"
+              },
+              "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Model\\SalesTransaction.Application.Model.csproj": {
+                "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Model\\SalesTransaction.Application.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj",
+        "projectName": "SalesTransaction.Application.WebAPI",
+        "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\SalesTransaction.Application.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\Daisyna\\.nuget\\packages\\",
+        "outputPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Daisyna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Service\\SalesTransaction.Application.Service.csproj": {
+                "projectPath": "D:\\AqoreSoftwareLtd\\SalesTransaction\\SalesTransaction.Application.Service\\SalesTransaction.Application.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

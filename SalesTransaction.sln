@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction", "SalesTransaction\SalesTransaction.csproj", "{C0686DE2-63C0-43CD-B377-5B818BC8F6DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Application.WebAPI", "SalesTransaction.Application.WebAPI\SalesTransaction.Application.WebAPI.csproj", "{5212F238-CE4B-46B5-8E71-CFA14A0122DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Application.WebAPI", "SalesTransaction.Application.WebAPI\SalesTransaction.Application.WebAPI.csproj", "{5212F238-CE4B-46B5-8E71-CFA14A0122DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Application.DataAccess", "SalesTransaction.Application.DataAccess\SalesTransaction.Application.DataAccess.csproj", "{D7F27FAD-B788-4D19-8C9F-1531FB9FE751}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Application.DataAccess", "SalesTransaction.Application.DataAccess\SalesTransaction.Application.DataAccess.csproj", "{D7F27FAD-B788-4D19-8C9F-1531FB9FE751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Application.Model", "SalesTransaction.Application.Model\SalesTransaction.Application.Model.csproj", "{0C115C51-A23D-4CB8-8EC7-648176BF2846}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Application.Model", "SalesTransaction.Application.Model\SalesTransaction.Application.Model.csproj", "{0C115C51-A23D-4CB8-8EC7-648176BF2846}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTransaction.Application.Service", "SalesTransaction.Application.Service\SalesTransaction.Application.Service.csproj", "{5EAFEE51-DBF6-403C-ADE5-F91723704FEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Application.Service", "SalesTransaction.Application.Service\SalesTransaction.Application.Service.csproj", "{5EAFEE51-DBF6-403C-ADE5-F91723704FEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTransaction.Application.Web", "SalesTransaction.Application.Web\SalesTransaction.Application.Web.csproj", "{AF08DA77-B354-4E3B-8CA9-B083C796CCCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0686DE2-63C0-43CD-B377-5B818BC8F6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0686DE2-63C0-43CD-B377-5B818BC8F6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0686DE2-63C0-43CD-B377-5B818BC8F6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0686DE2-63C0-43CD-B377-5B818BC8F6DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5212F238-CE4B-46B5-8E71-CFA14A0122DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5212F238-CE4B-46B5-8E71-CFA14A0122DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5212F238-CE4B-46B5-8E71-CFA14A0122DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{5EAFEE51-DBF6-403C-ADE5-F91723704FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EAFEE51-DBF6-403C-ADE5-F91723704FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EAFEE51-DBF6-403C-ADE5-F91723704FEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF08DA77-B354-4E3B-8CA9-B083C796CCCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF08DA77-B354-4E3B-8CA9-B083C796CCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF08DA77-B354-4E3B-8CA9-B083C796CCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF08DA77-B354-4E3B-8CA9-B083C796CCCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
