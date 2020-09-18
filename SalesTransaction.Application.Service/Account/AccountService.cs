@@ -19,7 +19,7 @@ namespace SalesTransaction.Application.Service.Account
         private IConfiguration _configuration;
 
 
-        private AccountService(IConfiguration configuration)
+        public AccountService(IConfiguration configuration)
         {
             _configuration = configuration;
 
@@ -42,9 +42,8 @@ namespace SalesTransaction.Application.Service.Account
             {
                 var cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT u.usereName, u.password FROM dbo.[User] AS u WHERE u.UserName='" + login.UserName + "'" +
-                    "              AND u.Password='" + login.Password + "' FOR JSON PATH, WITHOUT_AARRAY_WRAPPER) AS Json";
-
+                cmd.CommandText = "SELECT (SELECT u.userName,u.password FROM dbo.[User] AS u WHERE u.UserName = '" + login.UserName + "' AND u.Password='" + login.Password
+                    + "' FOR JSON PATH, WITHOUT_ARRAY_WRAPPER ) AS Json";
                 cmd.CommandTimeout = _commandTimeout;
 
                 using (SqlDataReader sqldr = cmd.ExecuteReader())

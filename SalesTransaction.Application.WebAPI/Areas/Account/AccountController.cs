@@ -9,11 +9,11 @@ namespace SalesTransaction.Application.WebApi.Areas.Account
 {
     public class AccountController : BaseController
     {
-        private IAccountService _as;
+        private IAccountService _accountService;
 
         public AccountController(IAccountService accountService)
         {
-            _as = accountService;
+            _accountService = accountService;
         }
 
         [HttpPost]
@@ -21,7 +21,7 @@ namespace SalesTransaction.Application.WebApi.Areas.Account
         {
             try
             {
-                dynamic jsonString = _as.GetLogin(login);
+                dynamic jsonString = _accountService.GetLogin(login);
                 return Ok(jsonString);
             }
             catch(Exception ex)
@@ -35,7 +35,7 @@ namespace SalesTransaction.Application.WebApi.Areas.Account
         {
             try
             {
-                dynamic jsonString = _as.GetUserDetails(json);
+                dynamic jsonString = _accountService.GetUserDetails(json);
                 return Ok(jsonString);
             }
             catch (Exception ex)

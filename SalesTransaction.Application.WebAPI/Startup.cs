@@ -33,8 +33,8 @@ namespace SalesTransaction.Application.WebAPI
                 options.AddPolicy(name: "AllowOrigin",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:1212",
-                            "http://localhost:2121")
+                        builder.WithOrigins("http://localhost:64188",
+                            "http://localhost:50677")
                                 .WithMethods("{POST}", "GET");
                     });
             });
