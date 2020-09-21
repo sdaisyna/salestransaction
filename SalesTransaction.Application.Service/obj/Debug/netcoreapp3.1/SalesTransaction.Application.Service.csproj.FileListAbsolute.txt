@@ -10,10 +10,6 @@ D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\De
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win7-x64\native\sni.dll
-D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win7-x86\native\sni.dll
-D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard1.3\System.Data.SqlClient.dll
-D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard1.3\System.Data.SqlClient.dll
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Application.DataAccess.dll
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Application.Model.dll
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\SalesTransaction.Application.DataAccess.pdb
@@ -26,3 +22,9 @@ D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\obj\De
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Application.Service.dll
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Application.Service.pdb
 D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\obj\Debug\netcoreapp3.1\SalesTransaction.Application.Service.genruntimeconfig.cache
+D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\AqoreSoftwareLtd\SalesTransaction\SalesTransaction.Application.Service\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

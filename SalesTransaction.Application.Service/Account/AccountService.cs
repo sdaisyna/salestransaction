@@ -41,9 +41,10 @@ namespace SalesTransaction.Application.Service.Account
             using (var con = _dah.GetConnection())
             {
                 var cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT (SELECT u.userName,u.password FROM dbo.[User] AS u WHERE u.UserName = '" + login.UserName + "' AND u.Password='" + login.Password
-                    + "' FOR JSON PATH, WITHOUT_ARRAY_WRAPPER ) AS Json";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SpUserSel";
+                cmd.Parameters.AddWithValue("@UserName", login.UserName);
+                cmd.Parameters.AddWithValue("@Password", login.Password);
                 cmd.CommandTimeout = _commandTimeout;
 
                 using (SqlDataReader sqldr = cmd.ExecuteReader())
@@ -76,10 +77,10 @@ namespace SalesTransaction.Application.Service.Account
             {
                 var cmd = con.CreateCommand();
 
-                cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.StoredProcedure;
                 dynamic jsonNew = JsonConvert.DeserializeObject(json);
-                cmd.CommandText = "SELECT (SELECT p.personId,p.firstName,p.middleName,p.lastName FROM dbo.[Person] AS p WHERE p.personId = " + Convert.ToString(jsonNew.personId)
-                                   + " FOR JSON PATH WITHOUT_ARRAY_WRAPPER) AS Json";
+                cmd.CommandText = "SpUserDetailsSel";
+                cmd.Parameters.AddWithValue("@UserId", Convert.ToString(jsonNew.userId));
                 cmd.CommandTimeout = _commandTimeout;
 
 

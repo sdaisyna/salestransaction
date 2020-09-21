@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<h1>User Login Form</h1>
+<br />
+
+<form name="loginForm" [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm()" novalidate>
+
+  <mat-error *ngIf="errorMessage !=''">
+    {{errorMessage}}
+  </mat-error>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="User Name" formControlName="userName" required>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="User Name" formControlName="userName" required>
+  </mat-form-field>
+
+  <!-- <div class="example-full-width">
+    <button mat-raised-button color="primary">Login</button>
+  </div>  -->
+
+</form>
