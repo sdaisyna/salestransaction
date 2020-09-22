@@ -104,5 +104,38 @@ namespace SalesTransaction.Application.Service.Account
                 }
             }
         }
+
+        public dynamic GetAllUserDetail()
+        {
+            using (var con = _dah.GetConnection())
+            {
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                //dynamic jsonNew = JsonConvert.DeserializeObject(json);
+                cmd.CommandText = "SpAllUserDetailSel";
+                cmd.CommandTimeout = _commandTimeout;
+
+                using (SqlDataReader sqldr = cmd.ExecuteReader())
+                {
+                    try
+                    {
+                        if (sqldr.HasRows)
+                        {
+                            return _dah.GetJson(sqldr);
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
+
+
+            }
+        }
     }
 }

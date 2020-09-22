@@ -31,12 +31,10 @@ namespace SalesTransaction.Application.WebAPI
             services.AddCors(options =>
             {
                 options.AddPolicy(name: "AllowOrigin",
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:64188",
-                            "http://localhost:50677")
-                                .WithMethods("{POST}", "GET");
-                    });
+                    builder => builder.WithOrigins("http://localhost:4200")
+                  .AllowAnyMethod()
+                  .AllowAnyHeader()
+                  .AllowCredentials());
             });
 
 
