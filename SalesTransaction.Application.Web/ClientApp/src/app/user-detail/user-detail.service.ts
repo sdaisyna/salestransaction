@@ -1,19 +1,22 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { WebApiService } from 'src/core/services/web-api.service';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class UserDetailService {
     constructor(private api: WebApiService) {
 
     }
 
-    getUserDetail(json: any): Observable<any> {
-        return this.api.get('Account/UserDetail', { json: JSON.stringify(json) });
+    getUser(userId: number) {
+        return this.api.get('account/userdetail', JSON.stringify({ userId: userId }));
     }
 
-    getAllUserDetail(): Observable<any> {
-        return this.api.get('Account/AllUserDetail');
+    getAllUserDetail() {
+        return this.api.get('account/alluserdetail');
 
     }
 

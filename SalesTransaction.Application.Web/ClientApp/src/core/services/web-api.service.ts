@@ -10,17 +10,17 @@ import { Observable } from 'rxjs';
 export class WebApiService {
     apiUrl = environment.apiUrl;
 
-    constructor(private http: HttpClient) {
+    constructor(private httpClient: HttpClient) {
 
     }
 
     post(url: string, body: any): Observable<any> {
-        return this.http.post(this.apiUrl + url, body, { headers: this.getHeaderOptions() });
+        return this.httpClient.post(this.apiUrl + url, body, { headers: this.getHeaderOptions() });
     }
 
 
     get(url: string, params?: any): Observable<any> {
-        return this.http.get(this.apiUrl + url, { headers: this.getHeaderOptions(), params: params });
+        return this.httpClient.get(this.apiUrl + url, { headers: this.getHeaderOptions(), params: { json: params } });
     }
 
 

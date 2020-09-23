@@ -1,14 +1,15 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { UtilityService } from './../../core/services/utility.service';
+// import { UtilityService } from './../../core/services/utility.service';
 import { MvLogin } from './login.model';
 import { LoginService } from './login.service';
 
 
 
 @Component({
-  selector: 'login',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -20,8 +21,9 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     public formBuilder: FormBuilder,
     public loginService: LoginService,
-    private utilityService: UtilityService,
-    private router: Router
+    // private utilityService: UtilityService,
+    private router: Router,
+    private snackbar: MatSnackBar
 
 
   ) { }
@@ -45,9 +47,11 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
       this.loginService.getLogin(this.login).subscribe((response: any) => {
 
         if (response) {
-          // this.utilityService.openSnackbar('Successful login !', 'success');
-          this.router.navigate(['/user-detail']);
           console.log(response);
+          localStorage.setItem('userId', response.userId);
+          this.openSnackbar('Successful login !', 'Dismiss');
+          this.router.navigate(['/user-detail']);
+
 
         } else {
           this.errorMessage = 'Invalid username or password !';
@@ -56,6 +60,15 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
 
     }
 
+  }
+
+  openSnackbar(message, action) {
+    this.snackbar.open(message, action, {
+      duration: 10000,
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+      panelClass: ['success']
+    });
   }
 
 

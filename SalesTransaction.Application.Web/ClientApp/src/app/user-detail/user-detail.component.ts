@@ -1,56 +1,52 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MvUserDetail } from './user-detail.model';
 import { UserDetailService } from './user-detail.service';
+import { map, mergeMap } from 'rxjs/operators';
+import { MatError } from '@angular/material';
 
 @Component({
-  selector: 'user-detail',
+  selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent implements OnInit {
+
+  userMessage: string = null;
   displayedColumns: string[];
   dataSource: MvUserDetail[] = [];
-  userMessage = '';
 
-  constructor(private http: HttpClient, private userDetailService: UserDetailService) { }
+  constructor(
+    private userDetailService: UserDetailService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     this.displayedColumns = ['userId', 'userName', 'password', 'firstName', 'middleName', 'lastName', 'email'];
     this.getUserDetail();
   }
 
   getUserDetail() {
-    this.userMessage = '';
 
-    const headers = new HttpHeaders();
-    headers.set('Content-Type', 'application/json');
-    headers.set('Access-Control-Allow-Origin', '*');
-    headers.set('Access-Control-Allow-Methods', 'GET, POST');
-    headers.set('Access-Control-Allow-Headers', 'Origin, Content-Type');
-
-    this.http.get('api/Account/UserDetail', {
-      headers: headers,
-      params: { json: JSON.stringify({ userId: 2 }) }
-    }).subscribe((result: any) => {
-
-      if (result) {
-        this.dataSource = [result];
+    // tslint:disable-next-line: radix
+    const userId = parseInt(localStorage.getItem('userId'));
+    this.userDetailService.getUser(userId).subscribe((data: any) => {
+      if (data) {
+        this.dataSource = [data];
+        console.log(Response);
       } else {
-
         this.dataSource = [];
-        this.userMessage = 'No data found !';
+        console.log('no data');
       }
-    }, error => console.error(error));
+    });
+
   }
 
   getAllUsers() {
-    this.userMessage = '';
-    this.userDetailService.getAllUserDetail().subscribe((result: any) => {
+    this.userDetailService.getAllUserDetail().subscribe((data: any) => {
 
-      if (result && result.data) {
-        this.dataSource = result.data;
+      if (data && data.data) {
+        this.dataSource = data.data;
       } else {
         this.dataSource = [];
         this.userMessage = 'No data found !';
