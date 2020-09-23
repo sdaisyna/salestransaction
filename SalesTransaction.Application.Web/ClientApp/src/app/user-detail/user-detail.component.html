@@ -1,6 +1,7 @@
 <div>
-  <button mat-raised-button (click)="getAllUsers()">Show all users</button>
-
+  <button mat-raised-button (click)="getAllUsers()" color="secondary">Show all users</button>
+<br>
+<br>
   <!-- <mat-error *ngIf="userMessage != ''">
     {{errorMessage}}
   </mat-error> -->
@@ -18,84 +19,31 @@
 
     <ng-container matColumnDef="middleName">
       <mat-header-cell *matHeaderCellDef> Middle Name </mat-header-cell>
-      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.middleName}}  </mat-cell>
+      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.middleName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="lastName">
       <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
-      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.lastName}}  </mat-cell>
+      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.lastName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.email}}  </mat-cell>
+      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.email}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="userName">
       <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
-      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.userName}}  </mat-cell>
+      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.userName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="password">
       <mat-header-cell *matHeaderCellDef> Password </mat-header-cell>
-      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.password}}  </mat-cell>
+      <mat-cell *matCellDef="let UserDetail"> {{UserDetail.password}} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
-  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;">   {{userMessage}}</span>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
 </div>
-
-
-
-
-<!-- <h1>User Details</h1>
-<br>
-<button type="button" mat-raised-button (click)="getAllUsers()">All Users</button>
-<br>
-<br>
-
-<table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-  <ng-container matColumnDef="userId">
-    <th mat-header-cell *matHeaderCellDef> User Id </th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.userId}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="userName">
-    <th mat-header-cell *matHeaderCellDef> Username </th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.userName}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="password">
-    <th mat-header-cell *matHeaderCellDef> Password </th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.password}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef> First name </th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.firstName}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="middleName">
-    <th mat-header-cell *matHeaderCellDef> Middle name </th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.middleName}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef> Last name </th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.lastName}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="email">
-    <th mat-header-cell *matHeaderCellDef> Email</th>
-    <td mat-cell *matCellDef="let UserDetail"> {{UserDetail.email}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-</table> -->
-
-

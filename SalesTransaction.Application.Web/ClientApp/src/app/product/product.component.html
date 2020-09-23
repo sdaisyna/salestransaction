@@ -1,3 +1,34 @@
-<p>
-  product works!
-</p>
+<h1>Product Details</h1>
+
+<div>
+  <button mat-raised-button (click)="addProduct()" color="primary"> Add Product</button>
+  <button mat-raised-button (click)="editProduct()" color="warn" class="ml-3">Edit Product</button>
+<br>
+<br>
+  <h4>Available products</h4>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="productId">
+      <mat-header-cell *matHeaderCellDef> Product Id </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.productId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="productName">
+      <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.productName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> {{ProductDetail.description}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="rate">
+      <mat-header-cell *matHeaderCellDef> Rate (NRP)</mat-header-cell>
+      <mat-cell *matCellDef="let ProductDetail"> Rs. {{ProductDetail.rate}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
+</div>
