@@ -7,5 +7,6 @@ namespace SalesTransaction.Application.Service.Product
     public interface IProductService
     {
         dynamic GetAllProductDetail();
+
     }
 }
