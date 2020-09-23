@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SalesTransaction.Application.Service;
 using SalesTransaction.Application.Service.Account;
+using SalesTransaction.Application.Service.Customer;
 using SalesTransaction.Application.Service.Product;
 
 namespace SalesTransaction.Application.WebAPI
@@ -44,6 +45,8 @@ namespace SalesTransaction.Application.WebAPI
             services.AddTransient<IAccountService, AccountService>();
 
             services.AddTransient<IProductService, ProductService>();
+
+            services.AddTransient<ICustomerService, CustomerService>();
 
         }
 
