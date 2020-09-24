@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MvProduct } from './product.model';
 import { ProductService } from './product.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,8 @@ export class ProductComponent implements OnInit {
   dataSource: MvProduct[] = [];
 
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -31,5 +33,21 @@ export class ProductComponent implements OnInit {
     });
 
   }
+
+  addProduct(): void {
+    // this.openDialog();
+  }
+
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+  //     width: '250px',
+  //     data: {}
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+  //     this.animal = result;
+  //   });
+  // }
 
 }
