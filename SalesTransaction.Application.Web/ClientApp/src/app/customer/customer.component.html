@@ -1,7 +1,5 @@
-<h1>Customer Details</h1>
+<h1 class="align-center">Customer Details</h1>
 
-
-<!-- 
 <div>
   <button mat-raised-button (click)="addCustomer()" color="primary"> Add Customer</button>
   <button mat-raised-button (click)="editCustomer()" color="warn" class="ml-3">Edit Customer</button>
@@ -29,13 +27,13 @@
       <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.lastName}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-      <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.email}} </mat-cell>
+    <ng-container matColumnDef="email" >
+      <mat-header-cell *matHeaderCellDef > Email </mat-header-cell>
+      <mat-cell *matCellDef="let CustomerDetail" class="pr-4"> {{CustomerDetail.email}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="phoneNumber">
-      <mat-header-cell *matHeaderCellDef>Phone Number </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef >Phone Number </mat-header-cell>
       <mat-cell *matCellDef="let CustomerDetail"> {{CustomerDetail.phoneNumber}} </mat-cell>
     </ng-container>
 
@@ -58,4 +56,4 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   <span *ngIf="userMessage != ''" style="color: red;font-size: medium;font-weight: bold;"> {{userMessage}}</span>
-</div> -->
+</div>
