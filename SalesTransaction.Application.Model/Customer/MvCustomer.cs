@@ -8,20 +8,20 @@ namespace SalesTransaction.Application.Model.Customer
     public class MvCustomer
     {
         [Required]
-        public string FirstName { get; set; }
+        public string firstName { get; set; }
         [Required]
-        public string LastName { get; set; }
+        public string lastName { get; set; }
         [Required]
-        public string MiddleName { get; set; }
+        public string middleName { get; set; }
         [Required]
-        public string Email { get; set; }
+        public string email { get; set; }
         [Required]
-        public string PhoneNumber { get; set; }
+        public string phoneNumber { get; set; }
         [Required]
-        public string City { get; set; }
+        public string city { get; set; }
         [Required]
-        public string State { get; set; }
+        public string state { get; set; }
         [Required]
-        public int ZipCode { get; set; }
+        public int zipCode { get; set; }
     }
 }

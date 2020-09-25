@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using SalesTransaction.Application.DataAccess;
+using SalesTransaction.Application.Model.Customer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -60,5 +62,28 @@ namespace SalesTransaction.Application.Service.Customer
             }
         }
 
+        public bool AddCustomer(MvCustomer customer)
+        {
+            using (var con = _dah.GetConnection())
+            {
+                var jsonNew = JsonConvert.SerializeObject(customer);
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SpCustomerAddressInsTsk";
+                cmd.Parameters.Add("@Json", SqlDbType.NVarChar).Value = jsonNew;
+                cmd.CommandTimeout = _commandTimeout;
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    return true;
+                }
+                return false;
+
+
+
+            }
+        }
     }
 }

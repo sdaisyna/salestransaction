@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SalesTransaction.Application.Model.Customer;
 using SalesTransaction.Application.Service.Customer;
 using SalesTransaction.Application.WebApi.Areas.Base;
 
@@ -28,6 +29,28 @@ namespace SalesTransaction.Application.WebAPI.Areas.Customer
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        [HttpPost]
+        public IActionResult AddCustomer([FromBody] MvCustomer customer)
+        {
+            try
+            {
+                var added = _customerService.AddCustomer(customer);
+                if (!added)
+                {
+                    return BadRequest();
+                }
+                else
+                {
+
+                }
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                throw e;
             }
         }
     }

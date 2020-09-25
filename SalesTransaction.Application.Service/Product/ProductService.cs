@@ -68,13 +68,13 @@ namespace SalesTransaction.Application.Service.Product
             using (var con = _dah.GetConnection())
             {
                 var jsonNew = JsonConvert.SerializeObject(product);
-                var command = con.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "SpProductProductRateTsk";
-                command.Parameters.Add("@json", SqlDbType.NChar).Value = jsonNew;
-                command.CommandTimeout = _commandTimeout;
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SpProductProductRateInsTsk";
+                cmd.Parameters.Add("@Json", SqlDbType.NVarChar).Value = jsonNew;
+                cmd.CommandTimeout = _commandTimeout;
 
-                int rows = command.ExecuteNonQuery();
+                int rows = cmd.ExecuteNonQuery();
 
                 if (rows > 0)
                 {
