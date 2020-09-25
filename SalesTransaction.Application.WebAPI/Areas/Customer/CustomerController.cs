@@ -33,7 +33,7 @@ namespace SalesTransaction.Application.WebAPI.Areas.Customer
         }
 
         [HttpPost]
-        public IActionResult AddCustomer([FromBody] MvCustomer customer)
+        public IActionResult AddCustomer([FromBody] MvAddCustomer customer)
         {
             try
             {
@@ -45,6 +45,24 @@ namespace SalesTransaction.Application.WebAPI.Areas.Customer
                 else
                 {
 
+                }
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        [HttpPost]
+        public IActionResult EditCustomer([FromBody] MvEditCustomer customer)
+        {
+            try
+            {
+                var edited = _customerService.EditCustomer(customer);
+                if (!edited)
+                {
+                    return BadRequest();
                 }
                 return Ok();
             }

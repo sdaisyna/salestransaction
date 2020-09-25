@@ -49,5 +49,24 @@ namespace SalesTransaction.Application.WebAPI.Areas.Product
                 throw e;
             }
         }
+
+        [HttpPost]
+        public IActionResult EditProduct([FromBody] MvEditProduct product)
+        {
+            try
+            {
+                var edited = _productService.EditProduct(product);
+                if (!edited)
+                {
+                    return BadRequest();
+                }
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
     }
 }

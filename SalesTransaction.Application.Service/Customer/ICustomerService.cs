@@ -9,6 +9,8 @@ namespace SalesTransaction.Application.Service.Customer
     {
         dynamic GetAllCustomerDetail();
 
-        bool AddCustomer(MvCustomer customer);
+        bool AddCustomer(MvAddCustomer customer);
+
+        bool EditCustomer(MvEditCustomer customer);
     }
 }

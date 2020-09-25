@@ -9,6 +9,7 @@ namespace SalesTransaction.Application.Service.Product
     {
         bool AddProduct(MvAddProduct product);
         dynamic GetAllProductDetail();
+        bool EditProduct(MvEditProduct product); 
 
     }
 }

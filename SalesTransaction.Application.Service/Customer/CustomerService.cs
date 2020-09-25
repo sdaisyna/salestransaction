@@ -62,7 +62,7 @@ namespace SalesTransaction.Application.Service.Customer
             }
         }
 
-        public bool AddCustomer(MvCustomer customer)
+        public bool AddCustomer(MvAddCustomer customer)
         {
             using (var con = _dah.GetConnection())
             {
@@ -81,6 +81,31 @@ namespace SalesTransaction.Application.Service.Customer
                 }
                 return false;
 
+
+
+            }
+        }
+
+     
+
+        public bool EditCustomer(MvEditCustomer customer)
+        {
+            using (var con = _dah.GetConnection())
+            {
+                var jsonNew = JsonConvert.SerializeObject(customer);
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SpCustomerUpd";
+                cmd.Parameters.Add("@Json", SqlDbType.NChar).Value = jsonNew;
+                cmd.CommandTimeout = _commandTimeout;
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    return true;
+                }
+                return false;
 
 
             }
