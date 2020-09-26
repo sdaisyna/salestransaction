@@ -1,0 +1,42 @@
+<div class="form-container">
+  <mat-toolbar color="primary">{{action}} Product</mat-toolbar>
+
+  <form class="product-form" [formGroup]="productForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Product Name</mat-label>
+      <input matInput formControlName="productName" [(ngModel)]="selectedProduct.productName" required>
+      <mat-error *ngIf="productForm.controls['productName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" [(ngModel)]="selectedProduct.description" required>
+      <mat-error *ngIf="productForm.controls['description'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Rate</mat-label>
+      <input matInput formControlName="rate" [(ngModel)]="selectedProduct.rate" required>
+      <mat-error *ngIf="productForm.controls['rate'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput formControlName="startDate" [(ngModel)]="selectedProduct.startDate" placeholder="mm/dd/yyyy"
+        required>
+      <mat-error *ngIf="productForm.controls['startDate'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+
+      <mat-label>End Date</mat-label>
+      <input matInput formControlName="endDate" [(ngModel)]="selectedProduct.endDate" placeholder="mm/dd/yyyy" required>
+      <mat-error *ngIf="productForm.controls['endDate'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+  </form>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="productForm.invalid">Save</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </div>
+</div>
