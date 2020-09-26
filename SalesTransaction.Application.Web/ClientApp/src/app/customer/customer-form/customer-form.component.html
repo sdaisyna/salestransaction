@@ -1,3 +1,67 @@
-<p>
-  customer-form works!
-</p>
+<div class="form-container">
+  <mat-toolbar color="primary">{{action}} Customer</mat-toolbar>
+
+  <form class="customer-form" [formGroup]="customerForm">
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" [(ngModel)]="selectedCustomer.firstName" placeholder="First Name"
+        required>
+      <mat-error *ngIf="customerForm.controls['firstName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Middle Name</mat-label>
+      <input matInput formControlName="middleName" [(ngModel)]="selectedCustomer.middleName" required>
+      <mat-error *ngIf="customerForm.controls['middleName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" [(ngModel)]="selectedCustomer.lastName" required>
+      <mat-error *ngIf="customerForm.controls['lastName'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" [(ngModel)]="selectedCustomer.email" required>
+      <mat-error *ngIf="customerForm.controls['email'].errors?.required">Invalid form value</mat-error>
+      <mat-error *ngIf="customerForm.controls['email'].errors?.email">Please enter valid email address</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone number</mat-label>
+      <input matInput formControlName="phoneNumber" [(ngModel)]="selectedCustomer.phoneNumber" required>
+      <mat-error *ngIf="customerForm.controls['phoneNumber'].errors?.required">Invalid form value</mat-error>
+      <mat-error *ngIf="customerForm.controls['phoneNumber'].errors?.pattern">Please enter valid data</mat-error>
+      <mat-error *ngIf="customerForm.controls['phoneNumber'].errors?.minLength">minimum length should be 8 characters
+      </mat-error>
+      <mat-error *ngIf="customerForm.controls['phoneNumber'].errors?.maxLength">maximum 15 characters allowed
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" [(ngModel)]="selectedCustomer.city" required>
+      <mat-error *ngIf="customerForm.controls['city'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>State</mat-label>
+      <input matInput formControlName="state" [(ngModel)]="selectedCustomer.state" required>
+      <mat-error *ngIf="customerForm.controls['state'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Zip code</mat-label>
+      <input matInput formControlName="zipCode" [(ngModel)]="selectedCustomer.zipCode" required>
+      <mat-error *ngIf="customerForm.controls['zipCode'].errors?.required">Invalid form value</mat-error>
+    </mat-form-field>
+
+  </form>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="customerForm.invalid">Save</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </div>
+</div>
