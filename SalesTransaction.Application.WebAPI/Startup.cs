@@ -14,6 +14,7 @@ using SalesTransaction.Application.Service;
 using SalesTransaction.Application.Service.Account;
 using SalesTransaction.Application.Service.Customer;
 using SalesTransaction.Application.Service.Product;
+using SalesTransaction.Application.Service.Transaction;
 
 namespace SalesTransaction.Application.WebAPI
 {
@@ -47,6 +48,8 @@ namespace SalesTransaction.Application.WebAPI
             services.AddTransient<IProductService, ProductService>();
 
             services.AddTransient<ICustomerService, CustomerService>();
+
+            services.AddTransient<ITransactionService, TransactionService>();
 
         }
 
