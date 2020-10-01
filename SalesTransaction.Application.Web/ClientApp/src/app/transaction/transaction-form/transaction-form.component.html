@@ -1,0 +1,33 @@
+<div class="form-container">
+  <mat-toolbar>{{action}} Transaction</mat-toolbar>
+  <form class="transaction-form" [formGroup]="transactionForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Customer</mat-label>
+      <mat-select formControlName="customerId" [(value)]="selectedTransaction.customerId">
+        <mat-option *ngFor="let c of customerList" [value]="c.id">
+          {{c.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Product</mat-label>
+      <mat-select formControlName="productId" [(value)]="selectedTransaction.productId">
+        <mat-option *ngFor="let p of productList" [value]="p.id">
+          {{p.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Quantity</mat-label>
+      <input matInput formControlName="quantity" [(ngModel)]="selectedTransaction.quantity" placeholder="quantity"
+        required>
+    </mat-form-field>
+  </form>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="transactionForm.invalid">Save</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using SalesTransaction.Application.DataAccess;
+using SalesTransaction.Application.Model.Transaction;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -61,6 +63,32 @@ namespace SalesTransaction.Application.Service.Transaction
 
 
             }
+        }
+
+        public bool AddTransaction(MvTransaction transaction)
+        {
+            using (var con = _dah.GetConnection())
+            {
+                var jsonNew = JsonConvert.SerializeObject(transaction);
+                var cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "SpSalesTransactionIns";
+                cmd.Parameters.Add("@json", SqlDbType.NChar).Value = jsonNew;
+                cmd.CommandTimeout = _commandTimeout;
+
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows > 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public bool EditTransaction(MvEditTransaction transaction)
+        {
+            throw new NotImplementedException();
         }
     }
 }

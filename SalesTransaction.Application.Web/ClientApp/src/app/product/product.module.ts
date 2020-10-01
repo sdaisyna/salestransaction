@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatDialogModule, MatFormFieldModule, MatInput, MatInputModule, MatSnackBar, MatTableModule, MatToolbarModule } from '@angular/material';
+// tslint:disable-next-line: max-line-length
+import { MatButtonModule, MatDialogModule, MatFormFieldModule, MatInput, MatInputModule, MatSnackBar, MatTableModule, MatToolbarModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductComponent } from './product.component';

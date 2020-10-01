@@ -2,10 +2,15 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatTableModule } from '@angular/material';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import { TransactionComponent } from './transaction.component';
 import { TransactionService } from './transaction.service';
+import { MatCheckboxModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatToolbarModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TransactionFormComponent } from './transaction-form/transaction-form.component';
 
 const routes: Routes = [
     {
@@ -21,14 +26,26 @@ const routes: Routes = [
         MatTableModule,
         MatButtonModule,
         HttpClientModule,
-
-
+        CdkTableModule,
+        MatInputModule,
+        MatToolbarModule,
+        MatFormFieldModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        CdkTableModule,
+        MatDialogModule,
+        MatSelectModule,
+        MatCheckboxModule
 
     ],
 
     declarations: [
-        TransactionComponent
+        TransactionComponent,
+        TransactionFormComponent
 
+    ],
+    entryComponents: [
+        TransactionFormComponent
     ],
     providers: [
         TransactionService

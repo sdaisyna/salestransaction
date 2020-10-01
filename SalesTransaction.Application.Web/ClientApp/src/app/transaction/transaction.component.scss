@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+button {
+  margin: 20px 0;
+  margin-right: 20px;
+}
+
+.mat-dialog-container {
+  padding: 10px !important;
+}
+
+.mat-row.hovered {
+  background: #eee;
+}
+
+.mat-row.highlighted {
+  background: #a6a6a6
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding: 0;
+  border-bottom: none;
+}
